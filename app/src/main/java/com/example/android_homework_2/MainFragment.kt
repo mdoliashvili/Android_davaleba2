@@ -14,11 +14,10 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
 
     private val Flist = listOf(
-        JavaFragment.newInstance(),
-        PythonFragment.newInstance(),
-        JavascriptFragment.newInstance()
+       TeamsFragment.newInstance(),
+        FootballersFragment.newInstance()
     )
-    private val tList = listOf("Java","Python","Javascript")
+    private val tList = listOf("Teams","Players")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

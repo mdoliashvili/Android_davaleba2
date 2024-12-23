@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.google.android.material.snackbar.Snackbar
 
-class RecyclerViewAdapter(val datalist: List<Course>): RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
+class RecyclerViewAdapter(val datalist: List<Football>): RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
 
         class MyViewHolder(v: View): RecyclerView.ViewHolder(v){
-            var currentCourse:Course ?= null
+            var currentCourse:Football ?= null
 
             init {
                 itemView.setOnClickListener {
@@ -34,18 +34,11 @@ class RecyclerViewAdapter(val datalist: List<Course>): RecyclerView.Adapter<Recy
 
         @SuppressLint("SetTextI18n")
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-            val course = datalist[position]
-            holder.currentCourse = course
-            val module = holder.itemView.findViewById<TextView>(R.id.ModuleText)
-            val level = holder.itemView.findViewById<TextView>(R.id.LevelText)
-            val themes = holder.itemView.findViewById<TextView>(R.id.ThemeText)
-            val duration = holder.itemView.findViewById<TextView>(R.id.DurationText)
-            val price = holder.itemView.findViewById<TextView>(R.id.PriceText)
+            val football = datalist[position]
+            holder.currentCourse = football
+            val name = holder.itemView.findViewById<TextView>(R.id.Text)
 
-            module.text = course.module
-            level.text = course.level
-            themes.text = course.Themes.toString()
-            duration.text = course.Duration
-            price.text = course.Price.toString()
+            name.text = football.name
+
         }
 }
