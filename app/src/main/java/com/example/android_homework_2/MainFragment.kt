@@ -14,10 +14,10 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
 
     private val Flist = listOf(
-       MovieFragment.newInstance(),
-        SeriesFragment.newInstance()
+       Fragment_One.newInstance(),
+        Fragment_Two.newInstance()
     )
-    private val tList = listOf("Movies","Series")
+    private val tList = listOf("Countries(1)","Countries(2)")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentOne">
+    tools:context=".Fragment_Two">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MovieRecycler"
+        android:id="@+id/recyclertwo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

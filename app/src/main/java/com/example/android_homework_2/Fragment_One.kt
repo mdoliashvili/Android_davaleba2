@@ -7,24 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_homework_2.databinding.FragmentMovieBinding
+import com.example.android_homework_2.databinding.FragmentOneBinding
 
 
-class MovieFragment : Fragment() {
+class Fragment_One : Fragment() {
 
-    private lateinit var binding:FragmentMovieBinding
+    private lateinit var binding: FragmentOneBinding
     private lateinit var adapter: RecyclerViewAdapter
 
-    private val Movies = listOf(
-        Movie("The Shawshank Redemption","Frank Darabont"),
-        Movie("The godfather","Francis Ford Coppola"),
-        Movie("Pulp fiction","Quentin tarantino")
+    private val countries = listOf(
+        Country("Georgia","Tbilisi"),
+        Country("France","Paris"),
+        Country("Spain","Madrid")
     )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMovieBinding.inflate(inflater,container,false)
+        binding = FragmentOneBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -34,14 +35,13 @@ class MovieFragment : Fragment() {
     }
 
     private fun initRecyView()=with(binding){
-        MovieRecycler.layoutManager = LinearLayoutManager(activity)
-        adapter=RecyclerViewAdapter(Movies)
-        MovieRecycler.adapter=adapter
+        recyclerOne.layoutManager = LinearLayoutManager(activity)
+        adapter=RecyclerViewAdapter(countries)
+        recyclerOne.adapter=adapter
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance() = MovieFragment()
+        fun newInstance() = Fragment_One()
     }
 }

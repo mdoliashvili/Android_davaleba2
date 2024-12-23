@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.google.android.material.snackbar.Snackbar
 
-class RecyclerViewAdapter(val datalist: List<Movie>): RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
+class RecyclerViewAdapter(val datalist: List<Country>): RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
 
         class MyViewHolder(v: View): RecyclerView.ViewHolder(v){
-            var movie:Movie ?= null
+            var country:Country ?= null
 
             init {
                 itemView.setOnClickListener {
-                    Snackbar.make(itemView,movie.toString(), Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(itemView,country.toString(), Snackbar.LENGTH_SHORT).show()
                 }
             }
 
@@ -34,12 +34,11 @@ class RecyclerViewAdapter(val datalist: List<Movie>): RecyclerView.Adapter<Recyc
 
         @SuppressLint("SetTextI18n")
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-            val movies = datalist[position]
-            holder.movie = movies
-            val name = holder.itemView.findViewById<TextView>(R.id.Name)
-            val director = holder.itemView.findViewById<TextView>(R.id.Director)
-
-            name.text = movies.name
-            director.text = movies.director
+            val countries = datalist[position]
+            holder.country = countries
+            val country = holder.itemView.findViewById<TextView>(R.id.Country)
+            val city = holder.itemView.findViewById<TextView>(R.id.City)
+            country.text = countries.country
+            city.text = countries.city
         }
 }
