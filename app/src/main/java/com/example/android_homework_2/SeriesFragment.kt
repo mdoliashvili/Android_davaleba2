@@ -6,41 +6,41 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android_homework_2.databinding.FragmentFootballersBinding
-import com.example.android_homework_2.databinding.FragmentTeamsBinding
+import com.example.android_homework_2.databinding.FragmentMovieBinding
+import com.example.android_homework_2.databinding.FragmentSeriesBinding
 
-
-class FootballersFragment : Fragment() {
-
-    private lateinit var binding: FragmentFootballersBinding
+class SeriesFragment : Fragment() {
+    private lateinit var binding: FragmentSeriesBinding
     private lateinit var adapter: RecyclerViewAdapter
 
-    private val Footballers = listOf(
-        Football("Marcelo"),
-        Football("Ramos"),
-        Football("Ronaldo")
+    private val Series = listOf(
+        Movie("Breaking Bad","Vince gilligan"),
+        Movie("Band of brothers","Steven Spielberg"),
+        Movie("Sherlock","Mark Gatiss")
     )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentFootballersBinding.inflate(inflater,container,false)
+    ): View? {
+        binding = FragmentSeriesBinding.inflate(inflater,container,false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyView()
     }
 
     private fun initRecyView()=with(binding){
-        FootballerRecycler.layoutManager = LinearLayoutManager(activity)
-        adapter=RecyclerViewAdapter(Footballers)
-        FootballerRecycler.adapter=adapter
+        SeriesRecycler.layoutManager = LinearLayoutManager(activity)
+        adapter=RecyclerViewAdapter(Series)
+        SeriesRecycler.adapter=adapter
     }
 
     companion object {
+
         @JvmStatic
-        fun newInstance() = FootballersFragment()
+        fun newInstance() = SeriesFragment()
     }
 }

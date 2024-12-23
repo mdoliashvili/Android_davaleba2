@@ -1,5 +1,6 @@
 package com.example.android_homework_2
 
-data class Football (
+data class Movie (
     var name: String,
+    var director: String
 )

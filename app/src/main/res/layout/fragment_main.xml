@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Football"
+        android:text="Movies"
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_marginBottom="0dp"
@@ -33,12 +33,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Teams" />
+            android:text="Movies" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Players" />
+            android:text="Series" />
 
     </com.google.android.material.tabs.TabLayout>
 
